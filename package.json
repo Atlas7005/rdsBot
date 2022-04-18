@@ -1,0 +1,23 @@
+{
+  "name": "rdsbot",
+  "version": "1.0.0",
+  "description": "Learn how to drift in Assetto Corsa with multiple people and dedicated servers.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Atlas7005",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "@discordjs/rest": "^0.4.1",
+    "canvas": "^2.9.1",
+    "discord-api-types": "^0.31.1",
+    "discord-welcome-card": "^4.7.0",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "gamedig": "^4.0.4",
+    "node-cron": "^3.0.0"
+  }
+}
