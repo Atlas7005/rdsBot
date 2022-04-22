@@ -71,7 +71,7 @@ client.on("guildMemberAdd", async member => {
     // const channel = member.guild.channels.cache.find(ch => ch.name === "bot-test");
     if (!channel) return;
     var image = await utils.genImage("welcome", member);
-    channel.send({ content: `${member} has joined the server.`, files: [ new MessageAttachment(image, "welcome.png")]});
+    channel.send({ files: [ new MessageAttachment(image, "welcome.png")]});
 });
 
 client.on("guildMemberRemove", async member => {
@@ -80,7 +80,7 @@ client.on("guildMemberRemove", async member => {
     // const channel = member.guild.channels.cache.find(ch => ch.name === "bot-test");
     if (!channel) return;
     var image = await utils.genImage("goodbye", member);
-    channel.send({ content: `${member} has left the server.`, files: [ new MessageAttachment(image, "goodbye.png")]});
+    channel.send({ files: [ new MessageAttachment(image, "goodbye.png")]});
 });
 
-client.login(process.env.TOKEN);
+client.login(process.env.token);
