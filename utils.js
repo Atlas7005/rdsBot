@@ -80,7 +80,7 @@ module.exports = {
                 var { server, result } = server;
                 return {
                     name: server.name,
-                    value: `${result.players.length}/${result.maxplayers} players.\nMap: ${result.track}\nCar Pack: ${this.parsePack(server.cars)}\n\n**[Join](https://acstuff.ru/s/q:race/online/join?ip=${server.ip}&httpPort=${server.port})**`,
+                    value: `${result.players.length}/${result.maxplayers} players.\nMap: ${this.parseMap(result.track)}\nCar Pack: ${this.parsePack(server.cars)}\n\n**[Join](https://acstuff.ru/s/q:race/online/join?ip=${server.ip}&httpPort=${server.port})**`,
                     inline: true
                 };
             }),
