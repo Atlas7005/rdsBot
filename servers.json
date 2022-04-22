@@ -1,7 +1,6 @@
 [
     {
         "name": "Main Server",
-        "map": "Drift",
         "cars": "WDTS",
         "ip": "23.88.126.6",
         "port": "8081"

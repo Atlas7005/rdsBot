@@ -80,7 +80,7 @@ module.exports = {
                 var { server, result } = server;
                 return {
                     name: server.name,
-                    value: `${result.players.length}/${result.maxplayers} players.\nMap: ${server.map}\nCar Pack: ${this.parsePack(server.cars)}\n\n**[Join](https://acstuff.ru/s/q:race/online/join?ip=${server.ip}&httpPort=${server.port})**`,
+                    value: `${result.players.length}/${result.maxplayers} players.\nMap: ${result.track}\nCar Pack: ${this.parsePack(server.cars)}\n\n**[Join](https://acstuff.ru/s/q:race/online/join?ip=${server.ip}&httpPort=${server.port})**`,
                     inline: true
                 };
             }),
@@ -106,12 +106,18 @@ module.exports = {
                 return pack;
         }
     },
-    parseMap(map) {
+    parseMap(mapRaw) {
+        var map = mapRaw.split("-")[0];
+
         switch(map) {
-            case "EK Tsukuba":
+            case "csp/1937/../drift":
+                return "Drift";
+            case "ek_tsukuba_fruits_line":
                 return "[EK Tsukuba](https://sharemods.com/g4s5pavow9oe/ek_tsukuba_fruits_line.rar.html)";
-            case "Sunrise Circuit":
+            case "sunrise_circuit":
                 return "[Sunrise Circuit](https://www.racedepartment.com/downloads/90s-golden-drift-spot-project-sunrise-circuit-tsukuruma-circuit-nasu-driving-palette-nasu.39709/)";
+            case "drift_playground2021":
+                return "[Drift Playground](https://www.racedepartment.com/downloads/drift-playground-2021.43530/)";
             default:
                 return map;
         }
